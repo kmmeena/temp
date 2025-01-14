@@ -1,0 +1,20 @@
+pipeline {
+    agent any 
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/kmmeena/temp.git' 
+            }
+        }
+
+        stage('Deploy') {
+
+            steps {
+                // Your deployment commands here
+                // Example using a simple copy command (replace with your actual deployment logic)
+                sh 'cp -r target/your-application /var/www/html' 
+            }
+        }
+    }
+}
