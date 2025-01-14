@@ -17,7 +17,8 @@ pipeline {
             steps {
                 // Your deployment commands here
                 // Example using a simple copy command (replace with your actual deployment logic)
-                sh 'cp -r /var/lib/jenkins/workspace/firstpipeline /var/www/html' 
+                //sh 'cp -r /var/lib/jenkins/workspace/firstpipeline /var/www/html' 
+		sh 'sudo git clone https://github.com/kmmeena/temp.git /var/www/html' 
 			  
             }
     }
