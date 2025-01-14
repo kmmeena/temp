@@ -6,5 +6,21 @@ pipeline {
                 sh 'whoami'
             }
         }
+ stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/kmmeena/temp.git' 
+            }
+        }
+
+        stage('Deploy') {
+
+            steps {
+                // Your deployment commands here
+                // Example using a simple copy command (replace with your actual deployment logic)
+                sh 'cp -r refs/remotes/origin/main /var/www/html' 
+			  
+            }
     }
+
+}
 }
