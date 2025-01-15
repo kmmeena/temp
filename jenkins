@@ -5,7 +5,7 @@ pipeline {
         stage("Code Clone from GitHub") {
             steps {
                 echo "Cloning repository from GitHub..."
-                git url: "https://github.com/kmmeena/temp.git", branch: "main"
+              sh 'cp -r * /var/www/html'
             }
         }
 
