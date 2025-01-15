@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mkdir depl'
+                
                 sh 'cd depl'
                 sh 'ls'
             }
