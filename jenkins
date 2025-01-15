@@ -5,7 +5,7 @@ pipeline {
         stage("Code Clone from GitHub") {
             steps {
                 echo "Cloning repository from GitHub..."
-                cp -r * /var/www/html'
+              sh 'cp -r * /var/www/html'
             }
         }
 
