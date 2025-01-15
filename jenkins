@@ -12,7 +12,7 @@ pipeline {
             steps {
                 withAWS(region: 'ap-south-1', credentials: '2e3e4f9c-7f6d-41a7-931a-c89c41090b53') {
                     sh 'ls -la depl'
-                    sh 'aws s3 cp build s3://jenkins-s3-html/ --recursive'
+                    sh 'aws s3 cp depl s3://jenkins-s3-html/ --recursive'
                 }
             }
         }
