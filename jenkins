@@ -1,19 +1,20 @@
 pipeline {
-    agent any
+    agent any 
+
     stages {
-        stage('Build') {
+        stage('Checkout') {
             steps {
-                
-                sh 'cd depl'
-                sh 'ls'
+                git branch: 'main', url: 'https://github.com/kmmeena/temp.git' 
             }
         }
-        stage('S3 Upload') {
+
+        stage('Deploy') {
+
             steps {
-                withAWS(region: 'ap-south-1', credentials: '2e3e4f9c-7f6d-41a7-931a-c89c41090b53') {
-                    sh 'ls -la depl'
-                    sh 'aws s3 cp depl s3://jenkins-s3-html/ --recursive'
-                }
+                // Your deployment commands here
+                // Example using a simple copy command (replace with your actual deployment logic)
+               // sh 'cp -r target/your-application /var/www/html' 
+			   //ls | sudo tee abc1.txt
             }
         }
     }
