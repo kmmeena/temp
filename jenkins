@@ -14,7 +14,7 @@ pipeline {
                 // Your deployment commands here
                 // Example using a simple copy command (replace with your actual deployment logic)
                // sh 'cp -r target/your-application /var/www/html' 
-			   //ls | sudo tee abc1.txt
+		sh 'whoami'
             }
         }
     }
